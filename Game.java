@@ -29,6 +29,11 @@ public class Game {
       System.out.println("What's your guess? ");
       int playerGuess = scanner.nextInt(); // playerGuess changes each loop
 
+      if (playerGuess > 100 || playerGuess < 1) {
+        System.out.println("We won't count that guess... Remember, only numbers 1-100, try again.");
+        continue;
+      }
+
       if (myNumber < playerGuess) {
         System.out.println("Your guess is too high, try again.");
         numTries++;
