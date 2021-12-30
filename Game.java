@@ -6,6 +6,7 @@ Requirements:
 -Once the user guesses, the computer will tell the user if their guess was too high or too low.
 -The game ends once the user has guessed the number correctly, then the computer will print the total number of guesses the user made before getting the right answer.
 -Will need to add error handling for bad player input.
+-Will only increase numTries count if the guess is a valid one.
 
 */
 import java.util.InputMismatchException;
@@ -31,14 +32,14 @@ public class Game {
       int playerGuess; // playerGuess changes each loop
 
       try {
-        playerGuess = scanner.nextInt();
-      } catch(InputMismatchException e) {
+        playerGuess = scanner.nextInt(); // try to run this code
+      } catch(InputMismatchException e) { // if player input is not an integer
         String notInt = scanner.next();
         System.out.println("That's not an integer, try again.");
         continue;
       }
 
-      if (playerGuess > 100 || playerGuess < 1) {
+      if (playerGuess > 100 || playerGuess < 1) { // confirm guess is in the correct range
         System.out.println("We won't count that guess... Remember, only numbers 1-100, try again.");
         continue;
       }
