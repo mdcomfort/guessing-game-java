@@ -32,7 +32,7 @@ public class Game {
 
       try {
         playerGuess = scanner.nextInt();
-      } catch(InputMismatchException exception) {
+      } catch(InputMismatchException e) {
         String notInt = scanner.next();
         System.out.println("That's not an integer, try again.");
         continue;
